@@ -1,53 +1,54 @@
 # Multi-Sensor ESP32-Based Monitoring System
 
-## Overview
-
 This project is an ESP32-based multi-sensor monitoring system that integrates several sensors, a servo motor, a display, and communication protocols to collect, display, and transmit data. It supports Bluetooth Low Energy (BLE) and WiFi communication for real-time data sharing and control.
 
 The system monitors environmental data such as temperature, humidity, light levels, and accelerometer values, while providing alerts for anomalous readings. A TFT display is used for local visualization, and BLE is used for wireless communication with connected devices.
 
-Features
 
-	•	Sensors Integration:
-	•	Temperature and Humidity: Using the Adafruit AHTX0 sensor.
-	•	Light Intensity: Using an LDR sensor.
-	•	Motion Detection: Using SparkFun LSM6DSO accelerometer and gyroscope.
-	•	Capacitive Touch Sensor: Adafruit CAP1188 for detecting touch events.
-	•	Actuators:
-	•	Servo Motor: Controlled based on touch input.
-	•	Buzzer: Provides audio alerts for abnormal conditions.
-	•	Communication:
-	•	WiFi: Connects to a server to upload sensor data and alerts.
-	•	Bluetooth Low Energy (BLE): Transmits sensor data to nearby devices.
-	•	Display: TFT screen displays sensor readings and status.
-	•	Data Storage: Non-Volatile Storage (NVS) is used for saving WiFi credentials.
+## Features
 
-Hardware Requirements
+Sensors Integration:
+Temperature and Humidity: Using the Adafruit AHTX0 sensor.
+Light Intensity: Using an LDR sensor.
+Motion Detection: Using SparkFun LSM6DSO accelerometer and gyroscope.
+Capacitive Touch Sensor: Adafruit CAP1188 for detecting touch events.
 
-	•	ESP32 Dev Board
-	•	Adafruit AHTX0 (Temperature and Humidity Sensor)
-	•	SparkFun LSM6DSO (Accelerometer and Gyroscope)
-	•	Adafruit CAP1188 (Capacitive Touch Sensor)
-	•	LDR Sensor (Light Intensity Sensor)
-	•	Servo Motor
-	•	Buzzer
-	•	TFT Display (TFT_eSPI)
-	•	Supporting passive components (resistors, wires, breadboard, etc.)
+Actuators:
+Servo Motor: Controlled based on touch input.
+Buzzer: Provides audio alerts for abnormal conditions.
 
-Software Requirements
+Communication:
+WiFi: Connects to a server to upload sensor data and alerts.
+Bluetooth Low Energy (BLE): Transmits sensor data to nearby devices.
+Display: TFT screen displays sensor readings and status.
+Data Storage: Non-Volatile Storage (NVS) is used for saving WiFi credentials.
 
-	•	Arduino IDE with ESP32 Board Manager installed.
-	•	Required libraries (Install via Arduino Library Manager):
-	•	Wire
-	•	HttpClient
-	•	WiFi
-	•	TFT_eSPI
-	•	BLEDevice
-	•	Adafruit AHTX0
-	•	SparkFun LSM6DSO
-	•	Servo
+## Hardware Requirements
 
-Pin Configuration
+ESP32 Dev Board
+Adafruit AHTX0 (Temperature and Humidity Sensor)
+SparkFun LSM6DSO (Accelerometer and Gyroscope)
+Adafruit CAP1188 (Capacitive Touch Sensor)
+LDR Sensor (Light Intensity Sensor)
+Servo Motor
+Buzzer
+TFT Display (TFT_eSPI)
+Supporting passive components (resistors, wires, breadboard, etc.)
+
+## Software Requirements
+
+Arduino IDE with ESP32 Board Manager installed.
+Required libraries (Install via Arduino Library Manager):
+Wire
+HttpClient
+WiFi
+TFT_eSPI
+BLEDevice
+Adafruit AHTX0
+SparkFun LSM6DSO
+Servo
+
+##Pin Configuration
 
 Component	ESP32 Pin
 LDR Sensor	GPIO 36
@@ -60,26 +61,24 @@ LSM6DSO Sensor	I2C Pins
 
 How to Use
 
-	1.	Setup Hardware:
-	•	Connect all components as per the pin configuration table.
-	2.	Configure WiFi Credentials:
-	•	Update WiFi credentials in NVS using the nvs_access() function.
-	3.	Upload Code:
+1.	Setup Hardware: Connect all components as per the pin configuration table.
+2.	Configure WiFi Credentials: Update WiFi credentials in NVS using the nvs_access() function.
+3.	Upload Code:
 	•	Open the code in Arduino IDE.
 	•	Select the correct board and COM port.
 	•	Compile and upload the code.
-	4.	Monitor System:
+4.	Monitor System:
 	•	View real-time data on the TFT display.
 	•	Use BLE to receive data on a connected device.
 	•	Check alerts via the buzzer and BLE notifications.
-	5.	Server Communication:
+5.	Server Communication:
 	•	Ensure the ESP32 can connect to the server (18.118.15.226 on port 5000).
 	•	Real-time data and alerts are sent via HTTP GET requests.
 
 BLE Data Format
 
-	•	Real-Time Data: Fan-lvl:<level>,LDR:<value>,Temp:<temperature>,Hum:<humidity>,X:<x>,Y:<y>,Z:<z>
-	•	Alerts: ALERT: <message>
+Real-Time Data: Fan-lvl:<level>,LDR:<value>,Temp:<temperature>,Hum:<humidity>,X:<x>,Y:<y>,Z:<z>
+Alerts: ALERT: <message>
 
 Functional Highlights
 
