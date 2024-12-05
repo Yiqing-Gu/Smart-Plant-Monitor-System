@@ -1,6 +1,6 @@
-README for Multi-Sensor ESP32-Based Monitoring System
+# Multi-Sensor ESP32-Based Monitoring System
 
-Overview
+## Overview
 
 This project is an ESP32-based multi-sensor monitoring system that integrates several sensors, a servo motor, a display, and communication protocols to collect, display, and transmit data. It supports Bluetooth Low Energy (BLE) and WiFi communication for real-time data sharing and control.
 
