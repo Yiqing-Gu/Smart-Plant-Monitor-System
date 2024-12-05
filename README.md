@@ -132,7 +132,7 @@ The system monitors environmental data such as temperature, humidity, light leve
    - Sends data and alert information to a remote server.
   # Server-Side Application: Flask-Based Data Management API
 
-# Server.py
+## Server.py
 
  server.py is a Flask-based server application for managing sensor data received from the ESP32 monitoring system. It supports data storage, retrieval, and visualization.
 
@@ -192,7 +192,7 @@ The server uses a CSV file (`sensor_data.csv`) to store sensor readings.
 - `x`, `y`, `z`: Accelerometer readings for the X, Y, and Z axes.
 
 
-# index.html
+## index.html
 
 
 index.html details the implementation of a real-time data visualization web page for the sensor monitoring system. The page uses the Chart.js library to plot temperature, humidity, and LDR sensor data dynamically.
